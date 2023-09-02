@@ -1,0 +1,17 @@
+cifrado = input("Ingresa el mensaje cifrado: ")
+desplazamiento = int(input("Cuantas posiciones se movio cada letra: "))
+
+decodificado = ""
+
+for letra in cifrado:
+
+  if letra.islower():
+    decodificado += chr((ord(letra) - ord('a') - desplazamiento) % 26 + ord('a'))
+
+  elif letra.isupper():
+    decodificado += chr((ord(letra) - ord('A') - desplazamiento) % 26 + ord('A'))
+
+  else:
+    decodificado += letra
+
+print("Mensaje decodificado:", decodificado)
